@@ -18,11 +18,24 @@ img {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   padding: 0px;
   margin: 0px;
   width: 100%;
   overflow: auto;
+}
+
+.form-box {
+  margin-bottom: 20px;
+
+  label {
+    font-weight: 500;
+    font-size: 16px;
+  }
 }
 
 .btn-orange {
@@ -41,6 +54,26 @@ body {
 
   &:hover {
     background-color: var(--theme-color);
+  }
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 17px;
+    height: 17px;
+    display: flex;
+    fill: var(--white-color);
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -101,6 +134,10 @@ body {
       &::after {
         display: none;
       }
+
+      &.btn.show {
+        border-color: transparent;
+      }
     }
 
     .profile-list {
@@ -155,15 +192,91 @@ body {
         margin: 0px;
 
         .list-item {
-          font-size: 15px;
-          font-weight: 500;
           border-bottom: 1px solid var(--theme-color);
-          padding: 10px 0px;
+
+          .headings {
+            font-size: 15px;
+            font-weight: 500;
+            padding: 10px 0px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+
+            .icon {
+              width: 30px;
+              height: 30px;
+              margin-right: 5px;
+
+              svg {
+                height: 30px;
+              }
+
+              &.x2 {
+
+                svg {
+                  height: 25px;
+                }
+              }
+            }
+
+            .text {
+              color: var(--dark-color);
+            }
+
+            .arrowIcon {
+              position: absolute;
+              top: 45%;
+              right: 5px;
+              transform: translate(-50%, -50%);
+              width: 15px;
+              height: 15px;
+
+              svg {
+                width: 100%;
+                height: 100%;
+              }
+
+              &.open {
+
+                svg {
+                  rotate: 180deg;
+                }
+              }
+            }
+          }
+
+          .sidesublist {
+            list-style-type: none;
+            margin-left: 35px;
+            padding: 0px;
+            margin-bottom: 20px;
+
+            .child-list {
+              font-size: 13px;
+              font-weight: 500;
+              color: var(--dark-color);
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 46%;
+                left: -14px;
+                height: 5px;
+                rotate: 135deg;
+                width: 5px;
+                border-left: 2px solid var(--dark-color);
+                border-top: 2px solid var(--dark-color);
+              }
+            }
+          }
         }
       }
 
       &.close {
         width: 50px;
+        padding: 20px 15px;
 
         .sideList {
           display: none;
@@ -188,20 +301,43 @@ body {
           margin-left: auto;
         }
       }
-      .contentunder{
-        padding: 20px;
+
+      .contentunder {
         background-color: var(--white-color);
         box-shadow: var(--box-shadow);
-        margin: 15px auto;
+        margin: 20px auto;
         border-radius: 10px;
+        overflow: hidden;
+
+        .css-11mde6h-MuiPaper-root {
+          box-shadow: 0px 0px 0px #ffffff00;
+        }
       }
 
       &.close {
         width: calc(100% - 50px);
       }
-      
+
     }
 
+  }
+
+  .screenHead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .heads {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .addReconciliation {
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    border-radius: 7px;
+    margin: 20px 0px;
   }
 }
 

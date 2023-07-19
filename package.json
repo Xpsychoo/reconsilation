@@ -10,7 +10,7 @@
     "prod": "next build && next export -o _static"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
+    "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.10.5",
     "@reduxjs/toolkit": "^1.9.2",
     "bootstrap": "^5.3.0",
