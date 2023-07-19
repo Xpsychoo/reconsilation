@@ -35,6 +35,15 @@ body {
   }
 }
 
+.btn-primary {
+  background-color: var(--theme-color);
+  border: 0px;
+
+  &:hover {
+    background-color: var(--theme-color);
+  }
+}
+
 .errorText {
   color: var(--error-color);
   margin: 10px 0px;
@@ -156,7 +165,7 @@ body {
       &.close {
         width: 50px;
 
-        .sideList{
+        .sideList {
           display: none;
         }
       }
@@ -166,9 +175,31 @@ body {
       width: calc(100% - 250px);
       padding: 20px;
 
+      .dashboadheader {
+        display: flex;
+        align-items: center;
+
+        .head {
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .add-button {
+          margin-left: auto;
+        }
+      }
+      .contentunder{
+        padding: 20px;
+        background-color: var(--white-color);
+        box-shadow: var(--box-shadow);
+        margin: 15px auto;
+        border-radius: 10px;
+      }
+
       &.close {
         width: calc(100% - 50px);
       }
+      
     }
 
   }

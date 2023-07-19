@@ -19,7 +19,7 @@ const Sidebar = () => {
         </div>
       </div>
       <ul className="sideList">
-        <li className="list-item">Dashboard</li>
+        <li className="list-item">Reconciliation</li>
       </ul>
     </div>
   );
