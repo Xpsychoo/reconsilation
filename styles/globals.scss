@@ -57,6 +57,10 @@ body {
   }
 }
 
+.btn-light{
+  background-color: #c6c7c8;
+}
+
 .add-btn {
   display: flex;
   align-items: center;
@@ -338,6 +342,92 @@ body {
     padding: 20px;
     border-radius: 7px;
     margin: 20px 0px;
+
+    .tabsSection{
+      .tabs-buttons-wrapper{
+        position: relative;
+        border: 1px solid #658ba53b;
+        display: inline-block;
+
+        .btn{
+          border-radius: 0px;
+
+          &.active{
+            background-color: var(--theme-color);
+            color: var(--white-color);
+          }
+          &.false{
+            position: relative;
+
+            &::before{
+              content: '';
+              position: absolute;
+              top: 50%;
+              left: -2px;
+              border-left: 1px solid #658ba53b;
+              transform: translate(-50%, -50%);
+              height: 100%;
+            }
+
+            &:first-child{
+              &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                border-right: 0px solid #658ba53b;
+                transform: translate(-50%, -50%);
+                height: 0px;
+              }
+            }
+
+            /* &:last-child{
+              &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                border-right: 1px solid var(--theme-color);
+                transform: translate(-50%, -50%);
+                height: 60%;
+              }
+            } */
+          }
+        }
+      }
+      .tabs-content{
+        position: relative;
+        
+        .tabs-box{
+          position: relative;
+          padding: 20px 0px;
+
+          .button-box{
+            text-align: right;
+            padding: 10px 15px;
+            .btn{
+              margin-left: 10px;
+              border-radius: 0px;
+            }
+          }
+          .note-box{
+
+            .header{
+              font-weight: 500;
+              color: var(--error-color);
+            }
+          }
+
+          .maps-head{
+            padding: 10px 0px 15px;
+            .head{
+              font-size: 15px;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
