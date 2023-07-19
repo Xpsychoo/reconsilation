@@ -6,15 +6,15 @@ function TopNav() {
   return (
     <div className="customNav">
       <div className="brandIcon">
-        <div className="logo">
+        <Link href='/' className='logo'>
           <img src="/images/logo.png" alt="User Logo" />
-        </div>
+        </Link>
       </div>
       <div className="userProfile">
         <Dropdown>
           <Dropdown.Toggle variant="profile" id="dropdown-basic">
             <div className="icon">
-              <img src="/images/avatar.png" alt="userimage" />
+              <img src="/images/avatar.jpg" alt="userimage" />
             </div>
             <div className="details">
               <div className="name">Ajay Kumar</div>

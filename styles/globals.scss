@@ -5,6 +5,7 @@
   --light-black: #444a52;
   --error-color: #ff1a1a;
   --orange-color: #f2767a;
+  --box-shadow: rgb(0 0 0 / 14%) 0px 0px 15px;
 }
 
 * {
@@ -44,61 +45,61 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: var(--box-shadow);
   border-radius: 5px;
-  
+
   .brandIcon {
-    width: 150px;
+    width: 110px;
 
     img {
       width: 100%;
     }
   }
 
-  .userProfile{
-    .btn-profile{
+  .userProfile {
+    .btn-profile {
       background-color: var(--theme-color);
       display: flex;
       align-items: center;
-      
-      .icon{
-        width: 50px;
-        height: 50px;
+      border-radius: 0px;
+
+      .icon {
+        width: 40px;
+        height: 40px;
         overflow: hidden;
         border-radius: 50%;
 
-        img{
+        img {
           width: 100%;
 
         }
       }
 
-      .details{
-        margin-left: 10px;
+      .details {
+        margin-left: 11px;
         color: var(--white-color);
 
-        .name{
+        .name {
           font-size: 15px;
           font-weight: 500;
         }
 
-        .position{
-          font-size: 13px;
+        .position {
+          font-size: 11px;
         }
       }
 
-      &::after{
+      &::after {
         display: none;
       }
     }
 
-    .profile-list{
+    .profile-list {
       list-style-type: none;
-      padding:10px;
+      padding: 10px;
       margin-bottom: 0px;
 
-      a{
+      a {
         text-decoration: none;
         color: var(--light-black);
       }
@@ -109,6 +110,68 @@ body {
 .MainWrapper {
   position: relative;
   max-width: 100%;
+
+  .MainContent {
+    display: flex;
+    width: 100%;
+    min-height: 90vh;
+
+
+    .SideMain {
+      width: 250px;
+      padding: 20px;
+      box-shadow: rgba(0, 0, 0, 0.14) 5px 8px 12px 0px;
+
+      .sideHeader {
+        position: relative;
+        text-align: right;
+
+        .icon {
+          width: 20px;
+          height: 20px;
+          margin-left: auto;
+          cursor: pointer;
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+      }
+
+      .sideList {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+
+        .list-item {
+          font-size: 15px;
+          font-weight: 500;
+          border-bottom: 1px solid var(--theme-color);
+          padding: 10px 0px;
+        }
+      }
+
+      &.close {
+        width: 50px;
+
+        .sideList{
+          display: none;
+        }
+      }
+    }
+
+    .content {
+      width: calc(100% - 250px);
+      padding: 20px;
+
+      &.close {
+        width: calc(100% - 50px);
+      }
+    }
+
+  }
 }
 
 .signinScreen {
