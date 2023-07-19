@@ -1,0 +1,181 @@
+:root {
+  --theme-color: #658ba5;
+  --white-color: #ffffff;
+  --dark-color: #191717;
+  --light-black: #444a52;
+  --error-color: #ff1a1a;
+  --orange-color: #f2767a;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  overflow: auto;
+}
+
+.btn-orange {
+  background-color: var(--orange-color);
+  color: var(--white-color);
+
+  &:hover {
+    background-color: var(--orange-color);
+    color: var(--white-color);
+  }
+}
+
+.errorText {
+  color: var(--error-color);
+  margin: 10px 0px;
+  font-size: 14px;
+}
+
+.customNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  
+  .brandIcon {
+    width: 150px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .userProfile{
+    .btn-profile{
+      background-color: var(--theme-color);
+      display: flex;
+      align-items: center;
+      
+      .icon{
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img{
+          width: 100%;
+
+        }
+      }
+
+      .details{
+        margin-left: 10px;
+        color: var(--white-color);
+
+        .name{
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        .position{
+          font-size: 13px;
+        }
+      }
+
+      &::after{
+        display: none;
+      }
+    }
+
+    .profile-list{
+      list-style-type: none;
+      padding:10px;
+      margin-bottom: 0px;
+
+      a{
+        text-decoration: none;
+        color: var(--light-black);
+      }
+    }
+  }
+}
+
+.MainWrapper {
+  position: relative;
+  max-width: 100%;
+}
+
+.signinScreen {
+  margin: 0px;
+  min-height: 100vh;
+
+  .imageBox {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .signinBox {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color);
+
+    .signinform {
+      width: 80%;
+      position: relative;
+
+      .signinhead {
+        color: var(--white-color);
+        text-align: center;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 100px;
+      }
+
+      .form-box {
+
+        label {
+          color: var(--white-color);
+          font-weight: 500;
+          margin-bottom: 7px;
+        }
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding-top: 20px;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .signinScreen {
+    flex-direction: column-reverse;
+
+    .signinBox {
+      min-height: 50vh;
+    }
+  }
+}
