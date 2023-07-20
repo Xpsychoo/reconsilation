@@ -2,6 +2,9 @@ import { validEmail } from '@/Utils/regex';
 import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import { toast } from 'react-hot-toast';
+import { setCookie } from 'cookies-next';
+import { useDispatch } from 'react-redux';
+import { loggedIn } from '@/store/userLoginSlice';
 
 const requiredFields = {
     email: 'Please Enter Your email',
@@ -10,6 +13,7 @@ const requiredFields = {
 
 export default function SignInScreen() {
     const router = useRouter()
+    const dispatch = useDispatch();
 
     const [userInfo, setuserInfo] = useState({})
     const [errorData, setErrorData] = useState({})
@@ -37,9 +41,11 @@ export default function SignInScreen() {
         setErrorData(errors);
 
         if (Object.keys(errors).length === 0) {
-            toast.success('Logged in Successfully')
-            setuserInfo({})
-            router.push('/')
+            toast.success('Logged in Successfully');
+            setCookie('loggedIn', true);
+            setuserInfo({});
+            dispatch(loggedIn());
+            router.push('/');
         }
     }
 
