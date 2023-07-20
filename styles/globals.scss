@@ -29,6 +29,26 @@ body {
   overflow: auto;
 }
 
+.mainLoader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  background-color: #fff;
+
+  img {
+    margin: auto;
+    width: 200px;
+    height: auto;
+    animation: zoomInOut 1s ease infinite;
+  }
+}
+
 .form-box {
   margin-bottom: 20px;
 
@@ -57,7 +77,7 @@ body {
   }
 }
 
-.btn-light{
+.btn-light {
   background-color: #c6c7c8;
 }
 
@@ -152,7 +172,8 @@ body {
       a {
         text-decoration: none;
       }
-      .list-item{
+
+      .list-item {
         color: var(--dark-color);
         cursor: pointer;
       }
@@ -349,23 +370,24 @@ body {
     border-radius: 7px;
     margin: 20px 0px;
 
-    .tabsSection{
-      .tabs-buttons-wrapper{
+    .tabsSection {
+      .tabs-buttons-wrapper {
         position: relative;
         border: 1px solid #658ba53b;
         display: inline-block;
 
-        .btn{
+        .btn {
           border-radius: 0px;
 
-          &.active{
+          &.active {
             background-color: var(--theme-color);
             color: var(--white-color);
           }
-          &.false{
+
+          &.false {
             position: relative;
 
-            &::before{
+            &::before {
               content: '';
               position: absolute;
               top: 50%;
@@ -375,8 +397,8 @@ body {
               height: 100%;
             }
 
-            &:first-child{
-              &::before{
+            &:first-child {
+              &::before {
                 content: '';
                 position: absolute;
                 top: 50%;
@@ -401,32 +423,36 @@ body {
           }
         }
       }
-      .tabs-content{
+
+      .tabs-content {
         position: relative;
-        
-        .tabs-box{
+
+        .tabs-box {
           position: relative;
           padding: 20px 0px;
 
-          .button-box{
+          .button-box {
             text-align: right;
             padding: 10px 15px;
-            .btn{
+
+            .btn {
               margin-left: 10px;
               border-radius: 0px;
             }
           }
-          .note-box{
 
-            .header{
+          .note-box {
+
+            .header {
               font-weight: 500;
               color: var(--error-color);
             }
           }
 
-          .maps-head{
+          .maps-head {
             padding: 10px 0px 15px;
-            .head{
+
+            .head {
               font-size: 15px;
               font-weight: 500;
             }
@@ -492,6 +518,21 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.25, 1.25);
+  }
+
+  100% {
+    transform: scale(1, 1);
   }
 }
 
