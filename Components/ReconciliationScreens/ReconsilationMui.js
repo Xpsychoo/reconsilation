@@ -4,11 +4,9 @@ import MUIDataTable from "mui-datatables";
 export default function ReconsilationMui({ title, plansList }) {
 
     const columns = [
-
-
         {
             name: 'subscription',
-            label: "Plan name",
+            label: "Reconsilation ID",
             options: {
                 filter: true,
                 customBodyRender: (value, tableMeta, updateValue) => {
@@ -17,10 +15,15 @@ export default function ReconsilationMui({ title, plansList }) {
                     )
                 }
             }
-        },
-        {
+        }, {
+            name: "connect",
+            label: "File Name",
+            options: {
+                filter: true,
+            },
+        }, {
             name: "transactionDate",
-            label: "Purchase Date",
+            label: "Created on",
             options: {
                 filter: true,
                 customBodyRender: (value, tableMeta, updateValue) => {
@@ -29,11 +32,15 @@ export default function ReconsilationMui({ title, plansList }) {
                     );
                 },
             },
-        },
-
-        {
+        }, {
             name: "connect",
-            label: "Total Connect",
+            label: "Status",
+            options: {
+                filter: true,
+            },
+        }, {
+            name: "connect",
+            label: "Action",
             options: {
                 filter: true,
             },

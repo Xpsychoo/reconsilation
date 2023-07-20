@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import FileUploadComponent from './FileUploadComponent';
 import MapFieldTds from './MapFieldTds';
 import MapFieldsAs from './MapFieldsAs';
+import ReconsilationTab from './ReconsilationTab';
 
 const ReconciliationProcessScreen = () => {
     const router = useRouter();
@@ -43,6 +44,7 @@ const ReconciliationProcessScreen = () => {
                         {currentTab === 'File Upload' && <FileUploadComponent />}
                         {currentTab === 'Map Fields TDS Ledger' && <MapFieldTds />}
                         {currentTab === 'Map Fields 26AS' && <MapFieldsAs />}
+                        {currentTab === 'Reconciliation' && <ReconsilationTab />}
                     </div>
                 </div>
             </div>
